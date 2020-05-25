@@ -1,0 +1,20 @@
+Dockerfile
+    ubuntu18.04
+    libpng-dev
+
+runtime nvidia
+	https://github.com/NVIDIA/nvidia-docker/issues/1236
+	https://github.com/NVIDIA/nvidia-docker
+
+setup
+    from setuptools import setup
+
+    setup(name='dVRL_simulator',
+          version='0.1',
+          install_requires=['gym']  # And any other dependencies required
+          )
+
+add environment to gym
+    locate gym/envs
+    vim gym/envs/__init__.py
+        import dVRL_simulator

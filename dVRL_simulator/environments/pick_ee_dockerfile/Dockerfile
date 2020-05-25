@@ -1,10 +1,10 @@
-FROM nvidia/opengl:1.0-glvnd-runtime-ubuntu16.04
+FROM nvidia/opengl:1.0-glvnd-runtime-ubuntu18.04
 
 WORKDIR /app
 
 #Install a few essentials
 RUN apt-get -y update && apt-get -y install libglib2.0-0 \ 
-libpng12-0 libqscintilla2-dev liblua5.1-0-dev libqt5serialport5-dev libqt5opengl5-dev mesa-utils libgl1-mesa-glx wget xvfb
+libpng-dev libqscintilla2-dev liblua5.1-0-dev libqt5serialport5-dev libqt5opengl5-dev mesa-utils libgl1-mesa-glx wget xvfb
 
 #LABEL com.nvidia.volumes.needed="nvidia_driver"
 #ENV PATH /usr/local/nvidia/bin:${PATH}
